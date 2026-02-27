@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Contacta con Nexora Labs. Si tienes un proyecto técnico en mente, podemos ayudarte a definirlo. Respondemos en 24 horas laborables.">
+        content="Contacta con Nexora Labs. Analizamos tu proceso interno y te proponemos una solución técnica clara. Respondemos en 24 horas laborables.">
     <title>Contacto — Nexora Labs</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -24,7 +24,7 @@
             <ul class="nav__links" role="list">
                 <li><a href="index.html" class="nav__link">Inicio</a></li>
                 <li><a href="servicios.html" class="nav__link">Servicios</a></li>
-                <li><a href="caso-de-estudio.html" class="nav__link">Caso de Estudio</a></li>
+                <li><a href="como-trabajamos.html" class="nav__link">¿Cómo trabajamos?</a></li>
                 <li><a href="contacto.html" class="nav__link nav__link--active">Contacto</a></li>
             </ul>
         </div>
@@ -34,8 +34,11 @@
     <header class="page-header">
         <div class="container">
             <div class="fade-in">
-                <h1 class="page-header__title">Contacto.</h1>
-                <p class="page-header__sub">Si tienes un proyecto técnico en mente, podemos ayudarte a definirlo.</p>
+                <h1 class="page-header__title">Hablemos de tu proyecto.</h1>
+                <p class="page-header__sub">
+                    Cuéntanos qué proceso quieres digitalizar o mejorar.
+                    Analizamos tu caso y te respondemos en menos de 24h laborables.
+                </p>
             </div>
         </div>
     </header>
@@ -43,69 +46,66 @@
     <!-- ========== CONTACT FORM ========== -->
     <section class="section--tight" id="contacto">
         <div class="container">
-            <form class="form fade-in" id="contact-form" novalidate>
 
-                <div class="form__group">
-                    <label for="name" class="form__label">Nombre</label>
-                    <input type="text" id="name" name="name" class="form__input" required autocomplete="name">
-                    <span class="form__error">Este campo es obligatorio.</span>
-                </div>
+            <form action="https://formspree.io/f/xreajnpz" method="POST">
 
-                <div class="form__group">
-                    <label for="email" class="form__label">Email</label>
-                    <input type="email" id="email" name="email" class="form__input" required autocomplete="email">
-                    <span class="form__error">Introduce un email válido.</span>
-                </div>
+                <input type="text" name="nombre" placeholder="Nombre" required>
 
-                <div class="form__group">
-                    <label for="company" class="form__label">Empresa / Proyecto</label>
-                    <input type="text" id="company" name="company" class="form__input" required
-                        autocomplete="organization">
-                    <span class="form__error">Este campo es obligatorio.</span>
-                </div>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
 
-                <div class="form__group">
-                    <label for="message" class="form__label">Cuéntanos sobre tu proyecto</label>
-                    <textarea id="message" name="message" class="form__textarea" required></textarea>
-                    <span class="form__error">Este campo es obligatorio.</span>
-                </div>
+                <input type="text" name="empresa" placeholder="Empresa (opcional)">
 
-                <div class="form__group">
-                    <label for="budget" class="form__label">Presupuesto estimado</label>
-                    <select id="budget" name="budget" class="form__select" required>
-                        <option value="" disabled selected>Selecciona un rango</option>
-                        <option value="<8000">&lt; 8.000 €</option>
-                        <option value="8000-25000">8.000 – 25.000 €</option>
-                        <option value="25000-50000">25.000 – 50.000 €</option>
-                        <option value=">50000">&gt; 50.000 €</option>
-                    </select>
-                    <span class="form__error">Selecciona un rango de presupuesto.</span>
-                </div>
+                <textarea name="mensaje" placeholder="Cuéntanos tu proyecto..." required></textarea>
 
-                <div class="form__group">
-                    <label for="source" class="form__label">¿Cómo nos has encontrado? <span
-                            class="text-dim">(opcional)</span></label>
-                    <input type="text" id="source" name="source" class="form__input" autocomplete="off">
-                </div>
+                <button type="submit">Enviar solicitud</button>
 
-                <div class="mt-5">
-                    <button type="submit" class="btn btn--primary">
-                        Enviar <span class="btn__arrow">→</span>
-                    </button>
-                </div>
+                <input type="text" name="_gotcha" style="display:none">
 
             </form>
 
+            <input type="hidden" name="_redirect" value="https://syntrix.es/gracias.html">
+
+            <!-- Microcopy confianza -->
             <div class="mt-6 fade-in">
-                <p>Respondemos en 24 horas laborables. Conversación directa. Sin proceso comercial.</p>
+                <p>
+                    Revisamos personalmente cada solicitud.
+                    Si tu proyecto encaja con nuestra línea de trabajo,
+                    te proponemos una llamada agendada inicial sin compromiso.
+                </p>
             </div>
+
         </div>
     </section>
 
-    <!-- ========== FOOTER ========== -->
+    <!-- ========== FOOTER (igual que index) ========== -->
     <footer class="footer">
         <div class="container">
             <div class="footer__inner">
+                <div class="footer__brand">
+                    <div class="footer__logo">Nexora<span>Labs</span></div>
+                    <p class="footer__desc">
+                        Automatización, IA y desarrollo de software para empresas que quieren escalar
+                        operaciones sin escalar complejidad.
+                    </p>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__col">
+                        <p class="footer__col-title">Navegación</p>
+                        <a href="index.html">Inicio</a>
+                        <a href="servicios.html">Servicios</a>
+                        <a href="como-trabajamos.html">¿Cómo trabajamos?</a>
+                        <a href="contacto.html">Contacto</a>
+                    </div>
+                    <div class="footer__col">
+                        <p class="footer__col-title">Redes Sociales</p>
+                        <a href="https://www.linkedin.com/company/nexoralabs/" target="_blank">LinkedIn</a>
+                        <a href="https://x.com/nexoralabs" target="_blank">X</a>
+                        <a href="https://www.instagram.com/nexoralabs/" target="_blank">Instagram</a>
+                        <a href="https://www.tiktok.com/@nexoralabs" target="_blank">TikTok</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
                 <span class="footer__copy">© 2026 Nexora Labs</span>
                 <a href="mailto:hola@nexoralabs.com" class="footer__email">hola@nexoralabs.com</a>
             </div>
