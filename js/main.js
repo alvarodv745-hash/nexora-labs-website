@@ -58,21 +58,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ============================================================
-    // 3. ACTIVE NAV STATE
+    // 3. SCROLL SPY (Active Nav on Scroll)
     // ============================================================
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinkElements = document.querySelectorAll('.nav__link');
 
-    navLinkElements.forEach(link => {
-        const href = link.getAttribute('href');
-        link.classList.remove('nav__link--active');
+    const sections = document.querySelectorAll("section[id]");
+    const navLinkElements = document.querySelectorAll(".nav__link");
 
-        if (href === currentPage) {
-            link.classList.add('nav__link--active');
-        } else if (currentPage === '' && href === 'index.html') {
-            link.classList.add('nav__link--active');
-        }
-    });
+    if (sections.length > 0 && 'IntersectionObserver' in window) {
+
+        const observerOptions = {
+            root: null,
+            rootMargin: "-40% 0px -50% 0px",
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    const id = entry.target.getAttribute("id");
+
+                    navLinkElements.forEach(link => {
+                        link.classList.remove("nav__link--active");
+
+                        if (link.getAttribute("href") === "#" + id ||
+                            (id === "automatizar" && link.getAttribute("href") === "#servicios") ||
+                            (id === "confianza" && link.getAttribute("href") === "#servicios")) {
+                            link.classList.add("nav__link--active");
+                        }
+                    });
+
+                }
+
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+    }
 
     // ============================================================
     // 4. CONTACT FORM VALIDATION
